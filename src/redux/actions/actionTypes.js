@@ -1,8 +1,8 @@
 // Photos Reducer
 export const SET_PHOTOS = 'SET_PHOTOS';
 
-
-// Search Reducer
+// Photo Item Reducer
+export const SET_ENLARGE_IMAGE = 'SET_ENLARGE_IMAGE';
 
 // Search Bar Reducer
 export const SET_COLLAPSE_BAR = 'SET_COLLAPSE_BAR';

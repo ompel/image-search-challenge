@@ -1,44 +1,29 @@
 .PhotoItem {
-  position: relative;
-  height: 250px;
-  width: 250px;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
   -webkit-box-shadow: 0px 0px 13px -2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 13px -2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 13px -2px rgba(0, 0, 0, 0.75);
 }
 
-.PhotoItem > img {
-  height: 100%;
+.thumbnail {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.overlay-content {
-  color: #cff958;
-  line-height: 150px;
-  font-family: 'arial';
-  text-align: center;
-  font-size: 110px;
+.PhotoItem:hover {
+  cursor: zoom-in;
 }
 
-.large-photo {
-  object-fit: contain;
+.swal2-popup {
+  background-color: transparent !important;
 }
 
-#photo-overlay {
-  background: rgb(45, 45, 56);
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  position: absolute;
-  padding: 0;
-  transition: opacity .5s;
-}
-
-.PhotoItem:hover #photo-overlay {
-  opacity: .65;
-  transition: opacity .5s;
-  cursor: pointer;
+.swal2-image {
+  margin: 0 !important;
+  border-radius: 16px;
 }

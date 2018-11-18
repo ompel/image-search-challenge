@@ -5,7 +5,9 @@ import PhotoItem from './PhotoItem';
 import Load from './Load';
 import './SearchResults.css';
 
+
 class SearchResults extends Component {
+
   render() {
     const photoItems = this.props.photos.map((photo, index) => (
       <PhotoItem key={index} {...photo} />
@@ -14,7 +16,7 @@ class SearchResults extends Component {
       <div
         className={`SearchResults row ${this.props.barCollapsed ? 'active' : ''} ${
           this.props.photos.length > 0 ? '' : 'justify-content-center'
-        }`}
+        } bg-primary`}
       >
         {this.props.searching ? <Load loadingText="Searching..." /> : ''}
         <div className="d-flex justify-content-center flex-wrap photo-list">{photoItems}</div>

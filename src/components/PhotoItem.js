@@ -1,36 +1,32 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ImageZoom from 'react-medium-image-zoom';
+import { connect } from 'react-redux';
+import { setEnlargeImage } from '../redux/actions/photoItem/actions';
 import './PhotoItem.css';
 
 class PhotoItem extends Component {
   render() {
     return (
-      <div className="PhotoItem m-2">
-        {/* <img src={this.props.previewURL} alt={this.props.tags} className="img-thumbnail" /> */}
-        <ImageZoom
-          image={{
-            src: this.props.previewURL,
-            alt: this.props.tags,
-            className: 'img-thumbnail',
-
-          }}
-          zoomImage={{
-            src: this.props.largeImageURL,
-            alt: this.props.tags,
-            className: 'large-photo',
-          }}
-          zoomMargin={0}
-        />
-        {/* <div
-          id="photo-overlay"
-          className=" d-flex justify-content-center align-items-center overlay-content"
-        >
-          <FontAwesomeIcon icon="search-plus" />
-        </div> */}
+      <div
+        className="PhotoItem m-2"
+        onClick={() => this.props.setEnlargeImage({ src: this.props.largeImageURL })}
+        style={{
+          backgroundImage: `url(${this.props.previewURL})`,
+        }}
+      >
+        <img src={this.props.webformatURL} alt={this.props.tags} className="thumbnail" />
       </div>
     );
   }
 }
 
-export default PhotoItem;
+const mapStateToProps = state => ({
+});
+
+const mapDispatchToProps = {
+  setEnlargeImage,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(PhotoItem);

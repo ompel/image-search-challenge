@@ -1,3 +1,21 @@
 .Home {
   overflow: hidden;
 }
+
+.modal-lg {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content {
+  background-color: transparent;
+  border-width: 0;
+}
+
+.image {
+  overflow: hidden;
+}
+
+img {
+  width: 100%
+}
