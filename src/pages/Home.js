@@ -21,7 +21,11 @@ class Home extends Component {
           <ModalBody>
             <div className="d-flex justify-content-center">
               <div className="image">
-                <img src={this.props.image.src} className="img-thumbnail"/>
+                <img
+                  src={this.props.image.src}
+                  alt={this.props.image.alt}
+                  className="img-thumbnail"
+                />
               </div>
             </div>
           </ModalBody>

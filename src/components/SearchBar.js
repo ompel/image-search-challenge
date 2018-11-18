@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import queryString from 'query-string';
 import {
   setCollapseBar,
   setSearchQuery,
@@ -14,9 +17,20 @@ const apiPath = 'https://pixabay.com/api/';
 const apiKey = '8934401-2d6cd1568430326e62922dd58';
 
 class SearchBar extends Component {
+  componentDidMount = () => {
+    const search = queryString.parse(this.props.location.search);
+    if (search.q) {
+      this.props.setSearchQuery(search.q);
+      this.getPhotosForQuery(search.q);
+    } else {
+      this.props.history.push('/');
+    }
+  };
+
   handleSearch = () => {
     if (this.props.searchQuery) {
       this.props.setPhotos([]);
+      this.props.history.push(`/?q=${this.props.searchQuery}`);
       this.getPhotosForQuery(this.props.searchQuery);
     }
   };
@@ -85,7 +99,7 @@ class SearchBar extends Component {
                 onClick={this.handleSearch}
                 disabled={!this.props.searchQuery}
               >
-                {this.props.searching ? 'Searching...' : 'Search!'}
+                {this.props.searching ? 'Searching...' : <span><FontAwesomeIcon icon="search" /> Search!</span>}
               </button>
             </div>
           </div>
@@ -113,7 +127,9 @@ const mapDispatchToProps = {
   setPhotos,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(SearchBar);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(SearchBar),
+);
