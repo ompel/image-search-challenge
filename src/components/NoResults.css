@@ -1,0 +1,10 @@
+.no-results > .glyph {
+  font-size: 1.2em;
+  opacity: 0.4;
+}
+
+.no-results > .text {
+  font-weight: 300;
+  font-size: 1.5em;
+  opacity: 0.8;
+}

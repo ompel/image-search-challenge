@@ -10,3 +10,7 @@
   visibility: visible;
   height: 85% !important;
 }
+
+.photo-list {
+  overflow: scroll;
+}

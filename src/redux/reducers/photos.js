@@ -1,7 +1,7 @@
 import { SET_PHOTOS } from '../actions/actionTypes';
 
 const initialState = {
-  photos: [],
+  list: [],
 };
 
 export default (state = initialState, action) => {
@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
     case SET_PHOTOS:
       return {
         ...state,
-        photos: action.photos,
+        list: action.photos,
       };
 
     default:

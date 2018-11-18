@@ -15,7 +15,6 @@ const apiKey = '8934401-2d6cd1568430326e62922dd58';
 
 class SearchBar extends Component {
   handleSearch = () => {
-    // this.props.setCollapseBar();
     if (this.props.searchQuery) {
       this.getPhotosForQuery(this.props.searchQuery);
     }

@@ -1,0 +1,33 @@
+.PhotoItem {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  -webkit-box-shadow: 0px 0px 13px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 13px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 13px -2px rgba(0, 0, 0, 0.75);
+}
+
+.PhotoItem > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+#photo-overlay {
+  background: rgb(45, 45, 56);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  transition: opacity .5s;
+}
+
+.PhotoItem:hover #photo-overlay {
+  opacity: .75;
+  transition: opacity .5s;
+  cursor: pointer;
+}
