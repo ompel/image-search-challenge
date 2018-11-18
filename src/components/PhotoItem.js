@@ -13,13 +13,14 @@ class PhotoItem extends Component {
             src: this.props.previewURL,
             alt: this.props.tags,
             className: 'img-thumbnail',
-            style: { width: '20em' },
+
           }}
           zoomImage={{
             src: this.props.largeImageURL,
             alt: this.props.tags,
+            className: 'large-photo',
           }}
-          zoomMargin={20}
+          zoomMargin={0}
         />
         {/* <div
           id="photo-overlay"

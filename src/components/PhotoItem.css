@@ -10,7 +10,7 @@
 .PhotoItem > img {
   height: 100%;
   width: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .overlay-content {
@@ -19,6 +19,10 @@
   font-family: 'arial';
   text-align: center;
   font-size: 110px;
+}
+
+.large-photo {
+  object-fit: contain;
 }
 
 #photo-overlay {
