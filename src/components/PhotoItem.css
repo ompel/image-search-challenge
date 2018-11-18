@@ -10,9 +10,16 @@
 .PhotoItem > img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
+.overlay-content {
+  color: #cff958;
+  line-height: 150px;
+  font-family: 'arial';
+  text-align: center;
+  font-size: 110px;
+}
 
 #photo-overlay {
   background: rgb(45, 45, 56);
@@ -27,7 +34,7 @@
 }
 
 .PhotoItem:hover #photo-overlay {
-  opacity: .75;
+  opacity: .65;
   transition: opacity .5s;
   cursor: pointer;
 }

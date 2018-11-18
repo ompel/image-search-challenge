@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NoResults from './NoResults';
 import PhotoItem from './PhotoItem';
+import Load from './Load';
 import './SearchResults.css';
 
 class SearchResults extends Component {
@@ -15,8 +16,8 @@ class SearchResults extends Component {
           this.props.photos.length > 0 ? '' : 'justify-content-center'
         }`}
       >
+        {this.props.searching ? <Load loadingText="Searching..." /> : ''}
         <div className="d-flex justify-content-center flex-wrap photo-list">{photoItems}</div>
-
         <div className="col-4 align-self-center" hidden={this.props.photos.length > 0}>
           <NoResults />
         </div>
@@ -28,6 +29,7 @@ class SearchResults extends Component {
 const mapStateToProps = state => ({
   barCollapsed: state.searchBar.collapsed,
   photos: state.photos.list,
+  searching: state.searchBar.searching,
 });
 
 const mapDispatchToProps = {};
