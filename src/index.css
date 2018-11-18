@@ -2,6 +2,7 @@
 
 * {
   font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 body {
@@ -9,7 +10,11 @@ body {
   padding: 0;
   background-color: rgb(37, 37, 37);
 }
-
+/* 
 #root {
   min-height: 100vh;
+} */
+
+html, body, #root, #root>div {
+  height: 100%
 }

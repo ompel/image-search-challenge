@@ -1,17 +1,8 @@
-import { SET_SEARCH_QUERY } from '../actions/actionTypes';
-
-const initalState = {
-  searchQuery: '',
-  isSearhing: false,
+const initialState = {
 };
 
-export default (state = initalState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
-    case SET_SEARCH_QUERY:
-      return {
-        ...state,
-      };
-
     default:
       return {
         ...state,

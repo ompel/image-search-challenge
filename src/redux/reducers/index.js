@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import photos from './photos';
-import search from './search';
+import searchBar from './searchBar';
 
 
-export default combineReducers({ photos, search });
+export default combineReducers({ photos, searchBar });

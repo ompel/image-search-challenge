@@ -1,0 +1,12 @@
+.SearchResults {
+  height: 0%;
+  visibility: hidden;
+  background-color: blue;
+  transition: all 0.5s;
+  transition-timing-function: ease-in;
+}
+
+.active {
+  visibility: visible;
+  height: 85% !important;
+}

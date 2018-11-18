@@ -1,0 +1,27 @@
+.SearchBar {
+  height: 100%;
+  transition: height 0.5s;
+  transition-timing-function: ease-in;
+}
+.collapsed {
+  height: 15% !important;
+}
+
+.form-control.is-invalid {
+  border-width: 2px;
+}
+
+.SearchBar > .collapsing {
+  /* animation-name: searchbar-collapsing;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; */
+}
+
+/* @keyframes searchbar-collapsing {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 25%;
+  }
+} */

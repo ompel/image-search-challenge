@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import SearchBar from './components/SearchBar/SearchBar';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 class App extends Component {
   render() {
     return (
-      <div className="App container-fluid h-100">
-        <SearchBar />
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route component={NotFound} />
+      </Switch>
     );
   }
 }
